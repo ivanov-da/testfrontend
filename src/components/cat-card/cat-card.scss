@@ -26,7 +26,7 @@
     }
   }
 
-  &___container-white {
+  &__container-white {
     position: absolute;
     top: 4px;
     left: 4px;
@@ -35,6 +35,7 @@
     background-color: $colorWhite;
     border-radius: 11px;
     clip-path: polygon(41px 0, 100% 0, 100% 100%, 0 100%, 0 41px);
+    z-index: 2;
   }
 
   &__container-border {
@@ -45,6 +46,7 @@
     background-color: $colorMain;
     border-radius: 14px;
     clip-path: polygon(43px 0, 100% 0, 100% 100%, 0 100%, 0 43px);
+    z-index: 1;
 
     &_hovered {
       background-color: $colorHovered;
@@ -60,7 +62,7 @@
 
     &_disabled {
       background-color: $colorDisabled;
-      cursor: auto;
+      cursor: default;
     }
   }
 
@@ -71,7 +73,7 @@
     width: 312px;
     height: 472px;
     background: url("../images/Photo.png") center 203px no-repeat;
-
+    z-index: 3;
     background-color: $colorWhite;
     border-radius: 11px;
     clip-path: polygon(41px 0, 100% 0, 100% 100%, 0 100%, 0 41px);
@@ -81,12 +83,8 @@
     &_selected-hovered,
     &_disabled {
       clip-path: polygon(35px 0, 100% 0, 100% 100%, 0 100%, 0 35px);
-    }
-
-    &_disabled {
       opacity: 0.5;
     }
-
   }
 
   &__description {
@@ -101,7 +99,9 @@
       color: $colorSelectedHovered;
     }
 
-    opacity: 0.5;
+    &_disabled {
+      opacity: 0.5;
+    }
   }
 
   &__title {
@@ -150,6 +150,7 @@
     border-radius: 100%;
     margin: 225px 0 0 220px;
     position: relative;
+    cursor: default;
 
     &_hovered {
       background-color: $colorHovered;
@@ -164,10 +165,8 @@
     }
 
     &_disabled {
-      color: $colorFooterDisabled;
-      opacity: 0.5;
+      background-color: $colorDisabled;
     }
-
   }
 
   &__weight {
@@ -207,7 +206,6 @@
     &_disabled {
       color: $colorFooterDisabled;
     }
-
   }
 
   &__footer-button {

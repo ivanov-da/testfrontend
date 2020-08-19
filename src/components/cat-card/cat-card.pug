@@ -1,16 +1,43 @@
 mixin cat-card(options)
+  -
+    let containerCornerClass = "cat-card__container-corner";
+    containerCornerClass += options.isDisabled === true ? " cat-card__container-corner_disabled" : "";
+
+    let containerBorderClass = "cat-card__container-border";
+    containerBorderClass += options.isDisabled === true ? " cat-card__container-border_disabled" : "";
+
+    let containerClass = "cat-card__container";
+    containerClass += options.isDisabled === true ? " cat-card__container_disabled" : "";
+
+    let descriptionClass = "cat-card__description";
+    descriptionClass += options.isDisabled === true ? " cat-card__description_disabled" : "";
+
+    let titleClass = "cat-card__title";
+    titleClass += options.isDisabled === true ? " cat-card__title_disabled" : "";
+
+    let tasteClass = "cat-card__taste";
+    tasteClass += options.isDisabled === true ? " cat-card__taste_disabled" : "";
+
+    let giftClass = "cat-card__gift";
+    giftClass += options.isDisabled === true ? " cat-card__gift_disabled" : "";
+
+    let circleClass = "cat-card__weight-circle";
+    circleClass += options.isDisabled === true ? " cat-card__weight-circle_disabled" : "";
+
+    let footerClass = "cat-card__footer";
+    footerClass += options.isDisabled === true ? " cat-card__footer_disabled" : "";
   .cat-card
-    .cat-card__container-corner
+    div(class=containerCornerClass)
+    div(class=containerBorderClass)
     .cat-card__container-white
-    .cat-card__container-border
-      .cat-card__container
-        p.cat-card__description= options.description
-        p.cat-card__title= options.title
-        p.cat-card__taste= options.taste
-        p.cat-card__gift= options.gift
-        .cat-card__weight-circle
-          p.cat-card__weight= options.weight
-          p.cat-card__weightUe= options.weightUe
-    p.cat-card__footer= options.footer
+    div(class=containerClass)
+      p(class=descriptionClass)= options.description
+      p(class=titleClass)= options.title
+      p(class=tasteClass)= options.taste
+      p(class=giftClass)= options.gift
+      div(class=circleClass)
+        p.cat-card__weight= options.weight
+        p.cat-card__weightUe= options.weightUe
+    p(class=footerClass)= options.footer
       span.cat-card__footer-button= options.footerButton
 
