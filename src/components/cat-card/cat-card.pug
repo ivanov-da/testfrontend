@@ -1,0 +1,15 @@
+mixin cat-card(options)
+  .cat-card
+    .cat-card__container-corner
+    .cat-card__container-border
+      .cat-card__container
+        p.cat-card__description= options.description
+        p.cat-card__title= options.title
+        p.cat-card__taste= options.taste
+        p.cat-card__gift= options.gift
+        .cat-card__weight-circle
+          p.cat-card__weight= options.weight
+          p.cat-card__weightUe= options.weightUe
+    p.cat-card__footer= options.footer
+      span.cat-card__footer-button= options.footerButton
+
