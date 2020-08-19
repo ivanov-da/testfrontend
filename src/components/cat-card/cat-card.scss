@@ -8,6 +8,33 @@
     border: 4px solid $colorMain;
     border-radius: 14px;
     clip-path: polygon(0 0, 35px 0, 0 35px);
+
+    &_hovered {
+      border: 4px solid $colorHovered;
+    }
+
+    &_selected {
+      border: 4px solid $colorSelected;
+    }
+
+    &_selected-hovered {
+      border: 4px solid $colorSelectedHovered;
+    }
+
+    &_disabled {
+      border: 4px solid $colorDisabled;
+    }
+  }
+
+  &___container-white {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 312px;
+    height: 472px;
+    background-color: $colorWhite;
+    border-radius: 11px;
+    clip-path: polygon(41px 0, 100% 0, 100% 100%, 0 100%, 0 41px);
   }
 
   &__container-border {
@@ -19,8 +46,22 @@
     border-radius: 14px;
     clip-path: polygon(43px 0, 100% 0, 100% 100%, 0 100%, 0 43px);
 
-    //обрезка без границы
-    //clip-path: polygon(43px 0, 100% 0, 100% 100%, 0 100%, 0 43px);
+    &_hovered {
+      background-color: $colorHovered;
+    }
+
+    &_selected {
+      background-color: $colorSelected;
+    }
+
+    &_selected-hovered {
+      background-color: $colorSelectedHovered;
+    }
+
+    &_disabled {
+      background-color: $colorDisabled;
+      cursor: auto;
+    }
   }
 
   &__container {
@@ -30,12 +71,22 @@
     width: 312px;
     height: 472px;
     background: url("../images/Photo.png") center 203px no-repeat;
+
     background-color: $colorWhite;
     border-radius: 11px;
     clip-path: polygon(41px 0, 100% 0, 100% 100%, 0 100%, 0 41px);
 
-    //обрезка без границы
-    //clip-path: polygon(41px 0, 100% 0, 100% 100%, 0 100%, 41px);
+    &_hovered,
+    &_selected,
+    &_selected-hovered,
+    &_disabled {
+      clip-path: polygon(35px 0, 100% 0, 100% 100%, 0 100%, 0 35px);
+    }
+
+    &_disabled {
+      opacity: 0.5;
+    }
+
   }
 
   &__description {
@@ -45,6 +96,12 @@
     font-size: $textSize;
     color: $colorGrey;
     margin: 18px 0 0 46px;
+
+    &_selected-hovered {
+      color: $colorSelectedHovered;
+    }
+
+    opacity: 0.5;
   }
 
   &__title {
@@ -54,6 +111,10 @@
     font-size: $titleSize;
     color: $colorBlack;
     margin: 7px 0 0 44px;
+
+    &_disabled {
+      opacity: 0.5;
+    }
   }
 
   &__taste {
@@ -63,6 +124,10 @@
     font-size: $tasteSize;
     color: $colorBlack;
     margin: 0px 0 0 46px;
+
+    &_disabled {
+      opacity: 0.5;
+    }
   }
 
   &__gift {
@@ -72,6 +137,10 @@
     font-size: $giftSize;
     color: $colorGrey;
     margin: 14px 0 0 47px;
+
+    &_disabled {
+      opacity: 0.5;
+    }
   }
 
   &__weight-circle {
@@ -81,6 +150,24 @@
     border-radius: 100%;
     margin: 225px 0 0 220px;
     position: relative;
+
+    &_hovered {
+      background-color: $colorHovered;
+    }
+
+    &_selected {
+      background-color: $colorSelected;
+    }
+
+    &_selected {
+      background-color: $colorSelectedHovered;
+    }
+
+    &_disabled {
+      color: $colorFooterDisabled;
+      opacity: 0.5;
+    }
+
   }
 
   &__weight {
@@ -116,6 +203,11 @@
     text-align: center;
     position: absolute;
     top: 495px;
+
+    &_disabled {
+      color: $colorFooterDisabled;
+    }
+
   }
 
   &__footer-button {
@@ -123,5 +215,9 @@
     text-decoration: underline;
     text-decoration-style: dashed;
     cursor: pointer;
+
+    &_hovered {
+      color: $colorHovered;
+    }
   }
 }
