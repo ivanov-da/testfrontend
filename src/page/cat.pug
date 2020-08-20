@@ -8,6 +8,7 @@ html
     title Cat Page
     link(rel='stylesheet' href='./cat.scss')
     link(rel='shortcut icon' type='image/x-icon' href='/../images/favicon.ico')
+    script(src='./jquery-for-parcel.js')
     script(src='./cat.js')
   body.cat-page
     .cat-page__content
@@ -23,7 +24,7 @@ html
             weightUe: 'кг',
             footer: 'Чего сидишь? Порадуй котэ,',
             footerButton: 'купи.',
-            isDisabled: true,
+            isDisabled: false,
           })
         .cat-page__card-fish
         .cat-page__card-chicken
