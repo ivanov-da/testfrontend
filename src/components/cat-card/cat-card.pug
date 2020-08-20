@@ -38,6 +38,9 @@ mixin cat-card(options)
       div(class=circleClass)
         p.cat-card__weight= options.weight
         p.cat-card__weightUe= options.weightUe
-    p(class=footerClass data-selected=options.dataSelected)= options.footer
-      span.cat-card__footer-button= options.footerButton
+    if options.isDisabled
+      p.cat-card__footer.cat-card__footer_disabled Печалька #{options.taste} закончился.
+    else
+      p(class="cat-card__footer" data-selected=options.dataSelected)= options.footer
+        span.cat-card__footer-button= options.footerButton
 
