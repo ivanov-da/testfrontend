@@ -25,7 +25,7 @@ $(document).ready(function () {
         $containerCorner.addClass('cat-card__container-corner_hovered');
         $containerBorder.addClass('cat-card__container-border_hovered');
         $weightCircle.addClass('cat-card__weight-circle_hovered');
-        $buyButton.addClass('cat-card__footer-button_hovered');
+        $(element).find('.cat-card__footer-button').addClass('cat-card__footer-button_hovered');
       }
     }
 
@@ -37,7 +37,7 @@ $(document).ready(function () {
         $containerCorner.removeClass('cat-card__container-corner_hovered');
         $containerBorder.removeClass('cat-card__container-border_hovered');
         $weightCircle.removeClass('cat-card__weight-circle_hovered');
-        $buyButton.removeClass('cat-card__footer-button_hovered');
+        $(element).find('.cat-card__footer-button').removeClass('cat-card__footer-button_hovered');
       }
     }
 
