@@ -4,11 +4,32 @@
 
 @import "../components/cat-card/cat-card.scss";
 
+
 .cat-page {
   background: url('../images/Pattern.jpg');
+
+  &__title {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 36px;
+
+    font-family: $exo2;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 43px;
+    text-align: center;
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 1px 1px #000000;
+  }
 
   &__cards {
     display: flex;
     justify-content: space-between;
+    max-width: 1120px;
+    margin: 0 auto;
   }
 }

@@ -12,7 +12,7 @@ html
     script(src='./cat.js')
   body.cat-page
     .cat-page__content
-      .cat-page__title
+      h1.cat-page__title Ты сегодня покормил кота?
       .cat-page__cards
         .cat-page__card-fuagra
           +cat-card({
@@ -43,3 +43,16 @@ html
             dataSelectedHovered: 'Котэ не одобряет?'
           })
         .cat-page__card-chicken
+          +cat-card({
+            description: 'Сказочное заморское яство',
+            title: 'Нямушка',
+            taste: 'с фуа-гра',
+            gift: '10 порций мышь в подарок',
+            weight: '0,5',
+            weightUe: 'кг',
+            footer: 'Чего сидишь? Порадуй котэ,',
+            footerButton: 'купи.',
+            isDisabled: true,
+            dataSelected: 'Печень утки разварная с артишоками.',
+            dataSelectedHovered: 'Котэ не одобряет?'
+          })
