@@ -31,7 +31,7 @@ mixin cat-card(options)
     div(class=containerBorderClass)
     .cat-card__container-white
     div(class=containerClass)
-      p(class=descriptionClass)= options.description
+      p(class=descriptionClass data-selectedhovered=options.dataSelectedHovered)= options.description
       p(class=titleClass)= options.title
       p(class=tasteClass)= options.taste
       p(class=giftClass)= options.gift

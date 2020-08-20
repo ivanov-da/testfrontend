@@ -11,6 +11,8 @@ $(document).ready(function () {
     const $description = $(element).find('.cat-card__description');
 
     const $descriptionContent = $description.html();
+    const $descriptionContentSelectedHovered = $description.data('selectedhovered');
+
     const $footerContent = $footer.html();
     const $footerContentSelected = $footer.data('selected');
 
@@ -39,6 +41,10 @@ $(document).ready(function () {
       }
     }
 
+    $card.hover(handlerHoverMouseIn, handlerHoverMouseOut);
+    $footer.on('mouseenter', '.cat-card__footer-button', handlerHoverMouseIn);
+    $footer.on('mouseleave', '.cat-card__footer-button', handlerHoverMouseOut);
+
     function handlerSelect(eventObj) {
       if ($card.hasClass('cat-card__container_disabled')) {
         return;
@@ -51,6 +57,14 @@ $(document).ready(function () {
 
         if ($card.hasClass('cat-card__container_selected')) {
           $footer.html($footerContent);
+
+          $card.removeClass('cat-card__container_selected-hovered');
+          $containerCorner.removeClass('cat-card__container-corner_selected-hovered');
+          $containerBorder.removeClass('cat-card__container-border_selected-hovered');
+          $weightCircle.removeClass('cat-card__weight-circle_selected-hovered');
+
+          $description.removeClass('cat-card__description_selected-hovered');
+          $description.html($descriptionContent);
         } else {
           $footer.html($footerContentSelected);
         }
@@ -63,12 +77,44 @@ $(document).ready(function () {
       }
     }
 
-    $card.hover(handlerHoverMouseIn, handlerHoverMouseOut);
-    $footer.on('mouseenter', '.cat-card__footer-button', handlerHoverMouseIn);
-    $footer.on('mouseleave', '.cat-card__footer-button', handlerHoverMouseOut);
-
     $card.click(handlerSelect);
     $footer.on('click', '.cat-card__footer-button', handlerSelect);
+
+    function handlerSelectedMouseOut(eventObj) {
+      if ($card.hasClass('cat-card__container_disabled')) {
+        return;
+      } else {
+        $card.removeClass('cat-card__container_selected-hovered');
+        $containerCorner.removeClass('cat-card__container-corner_selected-hovered');
+        $containerBorder.removeClass('cat-card__container-border_selected-hovered');
+        $weightCircle.removeClass('cat-card__weight-circle_selected-hovered');
+
+        $description.removeClass('cat-card__description_selected-hovered');
+        $description.html($descriptionContent);
+
+
+      }
+    }
+
+    function handlerSelectedMouseIn(eventObj) {
+      if ($card.hasClass('cat-card__container_disabled')) {
+        return;
+      } else if ($card.hasClass('cat-card__container_selected')) {
+        $card.addClass('cat-card__container_selected-hovered');
+        $containerCorner.addClass('cat-card__container-corner_selected-hovered');
+        $containerBorder.addClass('cat-card__container-border_selected-hovered');
+        $weightCircle.addClass('cat-card__weight-circle_selected-hovered');
+
+        $description.addClass('cat-card__description_selected-hovered');
+        $description.html($descriptionContentSelectedHovered);
+      }
+    }
+
+    $card.hover(handlerSelectedMouseIn, handlerSelectedMouseOut);
+
+
+
+
 
   });
 
