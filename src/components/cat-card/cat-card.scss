@@ -86,6 +86,8 @@
     &_selected-hovered,
     &_disabled {
       clip-path: polygon(35px 0, 100% 0, 100% 100%, 0 100%, 0 35px);
+      opacity: 0.5;
+      cursor: default;
     }
   }
 
@@ -169,6 +171,7 @@
 
     &_disabled {
       background-color: $colorDisabled;
+      cursor: default;
     }
   }
 
