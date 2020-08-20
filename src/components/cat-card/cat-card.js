@@ -12,12 +12,14 @@ $(document).ready(function () {
 
     const $descriptionContent = $description.html();
     const $footerContent = $footer.html();
+    const $footerContentSelected = $footer.data('selected');
 
 
     function handlerHoverMouseIn(eventObj) {
       if ($card.hasClass('cat-card__container_disabled') || $card.hasClass('cat-card__container_selected')) {
         return;
       } else {
+        $card.addClass('cat-card__container_hovered');
         $containerCorner.addClass('cat-card__container-corner_hovered');
         $containerBorder.addClass('cat-card__container-border_hovered');
         $weightCircle.addClass('cat-card__weight-circle_hovered');
@@ -29,6 +31,7 @@ $(document).ready(function () {
       if ($card.hasClass('cat-card__container_disabled') || $card.hasClass('cat-card__container_selected')) {
         return;
       } else {
+        $card.removeClass('cat-card__container_hovered');
         $containerCorner.removeClass('cat-card__container-corner_hovered');
         $containerBorder.removeClass('cat-card__container-border_hovered');
         $weightCircle.removeClass('cat-card__weight-circle_hovered');
@@ -36,9 +39,36 @@ $(document).ready(function () {
       }
     }
 
-    $card.hover(handlerHoverMouseIn, handlerHoverMouseOut);
-    $buyButton.hover(handlerHoverMouseIn, handlerHoverMouseOut);
+    function handlerSelect(eventObj) {
+      if ($card.hasClass('cat-card__container_disabled')) {
+        return;
+      } else {
+        $card.toggleClass('cat-card__container_hovered');
+        $containerCorner.toggleClass('cat-card__container-corner_hovered');
+        $containerBorder.toggleClass('cat-card__container-border_hovered');
+        $weightCircle.toggleClass('cat-card__weight-circle_hovered');
+        $buyButton.toggleClass('cat-card__footer-button_hovered');
 
+        if ($card.hasClass('cat-card__container_selected')) {
+          $footer.html($footerContent);
+        } else {
+          $footer.html($footerContentSelected);
+        }
+
+        $card.toggleClass('cat-card__container_selected');
+        $containerCorner.toggleClass('cat-card__container-corner_selected');
+        $containerBorder.toggleClass('cat-card__container-border_selected');
+        $weightCircle.toggleClass('cat-card__weight-circle_selected');
+        $buyButton.toggleClass('cat-card__footer-button_selected');
+      }
+    }
+
+    $card.hover(handlerHoverMouseIn, handlerHoverMouseOut);
+    $footer.on('mouseenter', '.cat-card__footer-button', handlerHoverMouseIn);
+    $footer.on('mouseleave', '.cat-card__footer-button', handlerHoverMouseOut);
+
+    $card.click(handlerSelect);
+    $footer.on('click', '.cat-card__footer-button', handlerSelect);
 
   });
 

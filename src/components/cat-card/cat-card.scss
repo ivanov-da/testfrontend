@@ -1,5 +1,7 @@
 .cat-card {
   position: relative;
+  width: 320px;
+  height: 480px;
 
   &__container-corner {
     position: absolute;
@@ -151,7 +153,7 @@
     border-radius: 100%;
     margin: 225px 0 0 220px;
     position: relative;
-    cursor: default;
+    cursor: pointer;
 
     &_hovered {
       background-color: $colorHovered;

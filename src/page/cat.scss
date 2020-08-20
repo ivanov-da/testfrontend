@@ -6,4 +6,9 @@
 
 .cat-page {
   background: url('../images/Pattern.jpg');
+
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+  }
 }
