@@ -86,9 +86,13 @@
     &_selected-hovered,
     &_disabled {
       clip-path: polygon(35px 0, 100% 0, 100% 100%, 0 100%, 0 35px);
+    }
+
+    &_disabled {
       opacity: 0.5;
       cursor: default;
     }
+
   }
 
   &__description {
