@@ -4,15 +4,24 @@
 
 @import "../components/cat-card/cat-card.scss";
 
+body {
+  max-width: 1920px;
+}
 
 .cat-page {
   background: url('../images/Pattern.jpg');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    flex-basis: 100%;
+  }
 
   &__title {
     max-width: 1120px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 36px;
 
     font-family: $exo2;
     font-style: normal;
@@ -28,8 +37,33 @@
 
   &__cards {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     max-width: 1120px;
     margin: 0 auto;
   }
+
+  &__card-fuagra,
+  &__card-fish {
+    margin-top: 50px;
+
+
+    @media(max-width: 1024px) {
+      flex-basis: 50%;
+    }
+
+    @media(max-width: 700px) {
+      flex-basis: 100%;
+    }
+  }
+
+
+  &__card-chicken {
+    margin-top: 50px;
+
+    @media(max-width: 1024px) {
+      flex-basis: 100%;
+    }
+  }
+
 }
